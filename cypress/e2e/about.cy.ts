@@ -1,5 +1,5 @@
-describe("template spec", () => {
-    it("about section renders correctly", () => {
+describe("About page", () => {
+    it("renders correctly", () => {
       cy.visit("/about");
       cy.dataCy("about-section").should("exist");
   

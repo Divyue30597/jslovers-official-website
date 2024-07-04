@@ -1,9 +1,11 @@
 import { defineConfig } from "cypress";
+import cypressEnv from "./cypress.env.json";
 
 export default defineConfig({
   e2e: {
-    baseUrl:"http://localhost:3000",
-    video:false,
-    screenshotOnRunFailure:false
+    baseUrl: cypressEnv.baseUrl,
+    video: false,
+    screenshotOnRunFailure: false,
   },
+  env: cypressEnv,
 });
