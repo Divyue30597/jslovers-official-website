@@ -36,24 +36,24 @@ export default async function page() {
           </p>
           <div className="flex items-center gap-x-8 mt-6">
             <Dropdown
-              filter_name="Company"
-              filter_options={comapnyFilterOptions}
-              filter_background="#e0719e"
+              filterName="Company"
+              filterOptions={comapnyFilterOptions}
+              filterBackground="#e0719e"
             />
             <Dropdown
-              filter_name="Role"
-              filter_options={roleFilterOptions}
-              filter_background="#f6e049"
+              filterName="Role"
+              filterOptions={roleFilterOptions}
+              filterBackground="#f6e049"
             />
             <Dropdown
-              filter_name="Experience"
-              filter_options={experienceFilterOptions}
-              filter_background="#7fd6c2"
+              filterName="Experience"
+              filterOptions={experienceFilterOptions}
+              filterBackground="#7fd6c2"
             />
             <Dropdown
-              filter_name="Location"
-              filter_options={locationFilterOptions}
-              filter_background="#f6a649"
+              filterName="Location"
+              filterOptions={locationFilterOptions}
+              filterBackground="#f6a649"
             />
           </div>
 

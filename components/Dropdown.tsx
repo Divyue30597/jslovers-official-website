@@ -1,25 +1,25 @@
 import { cn } from "@/lib/utils";
 type DropdownProps = {
-  filter_name: string;
-  filter_options: string[];
-  filter_background?: string;
+  filterName: string;
+  filterOptions: string[];
+  filterBackground?: string;
   className?: string;
 };
 const Dropdown = ({
-  filter_name,
-  filter_options,
-  filter_background,
+  filterName,
+  filterOptions,
+  filterBackground,
   className,
 }: DropdownProps) => {
   return (
     <div className={cn("group relative inline-block", className)}>
       <button
         style={{
-          backgroundColor: `${filter_background ? filter_background : null}`,
+          backgroundColor: `${filterBackground ? filterBackground : null}`,
         }}
         className="inline-flex items-center rounded-[56px] border-2 border-solid border-border bg-gray-300 px-6 py-3 text-xl font-medium"
       >
-        <span className="mr-1">{filter_name}</span>
+        <span className="mr-1">{filterName}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"
@@ -37,8 +37,8 @@ const Dropdown = ({
         </svg>
       </button>
       <ul className="absolute hidden pt-1 text-gray-700 group-hover:block">
-        {filter_options?.length > 0 &&
-          filter_options.map((opt: string, i: number) => (
+        {filterOptions?.length > 0 &&
+          filterOptions.map((opt: string, i: number) => (
             <li className="" key={i}>
               <a
                 className=" whitespace-no-wrap block bg-gray-200 px-4 py-2 hover:bg-gray-400"
