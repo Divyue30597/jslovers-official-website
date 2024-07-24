@@ -9,25 +9,25 @@ export type JobCardProps = Job & {
 
 type Job = {
   id: number;
-  company_name: string;
+  companyName: string;
   location: {
     city: string;
     country: string;
   };
-  is_remote: boolean;
+  isRemote: boolean;
   experience: string;
   role: string;
-  company_logo: string;
+  companyLogo: string;
 }
 
 
 const JobCard = ({
-  company_name,
+  companyName,
   location,
-  is_remote,
+  isRemote,
   experience,
   role,
-  company_logo,
+  companyLogo,
   className,
 }: JobCardProps) => {
   return (
@@ -38,17 +38,17 @@ const JobCard = ({
       )}
     >
       <Image
-        src={company_logo}
+        src={companyLogo}
         width="205"
         height="52"
-        alt={company_name}
+        alt={companyName}
         loading="lazy"
       />
       <div className="my-3 border-[1.5px] border-border-heading" />
       <div className="flex flex-col gap-[10px]">
         <div className="flex items-center justify-between">
-          <p className="font-medium">{company_name}</p>
-          {is_remote && (
+          <p className="font-medium">{companyName}</p>
+          {isRemote && (
             <p className="font-medium text-sm py-2 px-3 bg-background-gray rounded">
               Remote
             </p>
