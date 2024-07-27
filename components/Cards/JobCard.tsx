@@ -2,18 +2,32 @@ import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/Button";
-import { JobData } from "@/types";
 
-interface JobCardProps extends JobData {
+export type JobCardProps = Job & {
   className?: string;
 }
+
+type Job = {
+  id: number;
+  companyName: string;
+  location: {
+    city: string;
+    country: string;
+  };
+  isRemote: boolean;
+  experience: string;
+  role: string;
+  companyLogo: string;
+}
+
+
 const JobCard = ({
-  company_name,
+  companyName,
   location,
-  is_remote,
+  isRemote,
   experience,
   role,
-  company_logo,
+  companyLogo,
   className,
 }: JobCardProps) => {
   return (
@@ -24,17 +38,17 @@ const JobCard = ({
       )}
     >
       <Image
-        src={company_logo}
+        src={companyLogo}
         width="205"
         height="52"
-        alt={company_name}
+        alt={companyName}
         loading="lazy"
       />
       <div className="my-3 border-[1.5px] border-border-heading" />
       <div className="flex flex-col gap-[10px]">
         <div className="flex items-center justify-between">
-          <p className="font-medium">{company_name}</p>
-          {is_remote && (
+          <p className="font-medium">{companyName}</p>
+          {isRemote && (
             <p className="font-medium text-sm py-2 px-3 bg-background-gray rounded">
               Remote
             </p>
