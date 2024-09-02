@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 type MainNavProps = {
   items?: Navigation[];
   children?: React.ReactNode;
-}
+};
 const createNavigation = (items: Navigation[], currentPath: string) => {
   return items.map((item, index) => (
     <Link
@@ -28,25 +28,26 @@ export function MainNav({ items }: MainNavProps) {
   const currentPath = usePathname();
 
   return (
-    <div className="flex justify-between w-full">
+    <div className="flex w-full items-center justify-between">
       <div className="flex">
-      <Logo />
+        <Logo />
 
-          <nav className="hidden gap-10 lg:flex">
-            {items && createNavigation(items, currentPath)}
-          </nav>
+        <nav className="hidden gap-10 lg:flex">
+          {items && createNavigation(items, currentPath)}
+        </nav>
       </div>
-      <nav>
-            <Link
-              href="/register"
-              className={cn(
-                buttonVariants(),
-                "border-solid border-2 border-border"
-              )}
-            >
-              Register Now
-            </Link>
-          </nav>
+      <nav className="flex flex-col items-center gap-[2px]">
+        <Link
+          href="/register"
+          className={cn(
+            buttonVariants(),
+            "rounded-xl border-[3px] px-8 py-6 text-[16px]",
+          )}
+        >
+          Register Now
+        </Link>
+        <p className="text-[12px]">Hurry ! Only few seats left</p>
+      </nav>
     </div>
   );
 }

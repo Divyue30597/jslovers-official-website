@@ -2,10 +2,12 @@ import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/Button";
+import Link from "next/link";
+import { Icons } from "../Icons";
 
 export type JobCardProps = Job & {
   className?: string;
-}
+};
 
 type Job = {
   id: number;
@@ -18,8 +20,7 @@ type Job = {
   experience: string;
   role: string;
   companyLogo: string;
-}
-
+};
 
 const JobCard = ({
   companyName,
@@ -33,8 +34,8 @@ const JobCard = ({
   return (
     <div
       className={cn(
-        "border-solid border-border-card border-[3px] rounded-[10px] py-6 px-3",
-        className
+        "border-border-card flex flex-col justify-between rounded-[10px] border-[3px] border-solid p-4",
+        className,
       )}
     >
       <Image
@@ -44,45 +45,39 @@ const JobCard = ({
         alt={companyName}
         loading="lazy"
       />
-      <div className="my-3 border-[1.5px] border-border-heading" />
-      <div className="flex flex-col gap-[10px]">
+      <div className="border-border-heading my-3 border-[1.5px]" />
+      <div className="mb-3 flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <p className="font-medium">{companyName}</p>
           {isRemote && (
-            <p className="font-medium text-sm py-2 px-3 bg-background-gray rounded">
+            <p className="rounded bg-gray-200 px-2 py-1 text-sm font-medium">
               Remote
             </p>
           )}
         </div>
-        <p className="font-semibold text-2xl">{role}</p>
-        <div className="flex gap-x-2 items-center">
+        <p className="text-2xl font-semibold">{role}</p>
+        <div className="flex items-center gap-x-2">
           <p className="text-text-label-2 font-medium">Location</p>
           <p>
             <span className="text-text-sub-heading">{location?.city}</span>,{" "}
             {location?.country}
           </p>
         </div>
-        <div className="flex gap-x-2 items-center">
+        <div className="flex items-center gap-x-2">
           <p className="text-text-label-2 font-medium">Experience</p>
           <p className="text-text-sub-heading">{experience}</p>
         </div>
       </div>
-      <button
+      <Link
+        href={"#"}
         className={cn(
           buttonVariants(),
-          "border-solid border-2 border-border mt-[10px]"
+          "hover:text-white w-fit border-2 border-solid border-border",
         )}
       >
-        View Details
-        <Image
-          src="/assets/icons/right_arrow.svg"
-          width="11"
-          height="11"
-          alt=""
-          className="ml-1"
-          loading="lazy"
-        />
-      </button>
+        <span className="mr-2">View Details</span>
+        <span className="hover:text-inherit">{Icons.RightArrow()}</span>
+      </Link>
     </div>
   );
 };

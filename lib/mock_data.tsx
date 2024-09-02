@@ -106,3 +106,63 @@ export const experienceFilterOptions = [
   "5+ years",
 ];
 export const locationFilterOptions = ["abc", "xyz"];
+
+export const meetups_sample_obj = {
+  filters: [
+    {
+      label: "Location",
+      bgColor: "#E0719E",
+      options: ["New York", "San Francisco", "London", "Berlin", "Tokyo"],
+    },
+    {
+      label: "Topics",
+      bgColor: "#F6E049",
+      options: [
+        "Javascript",
+        "Webpack",
+        "CSS Foundations",
+        "Web Accessibility",
+        "Asynchronous Javascript",
+        "Reactjs",
+        "Nodejs",
+        "State Management",
+      ],
+    },
+    {
+      label: "Level",
+      bgColor: "#7FD6C2",
+      options: ["Beginner", "Intermediate", "Advanced", "Expert"],
+    },
+  ],
+};
+
+export const jobs_dropdown_options = {
+  filters: [
+    {
+      label: "Company",
+      bgColor: "#E0719E",
+      options: ["Google", "Microsoft", "Amazon", "Facebook", "Apple"],
+    },
+    {
+      label: "Role",
+      bgColor: "#F6E049",
+      options: [
+        "Software Engineer",
+        "Data Scientist",
+        "Product Manager",
+        "Designer",
+        "DevOps Engineer",
+      ],
+    },
+    {
+      label: "Experience",
+      bgColor: "#7FD6C2",
+      options: ["0-2 years", "2-5 years", "5-10 years", "10+ years"],
+    },
+    {
+      label: "Location",
+      bgColor: "#F6A649",
+      options: ["New York", "San Francisco", "Seattle", "Austin", "Remote"],
+    },
+  ],
+};

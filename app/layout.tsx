@@ -18,11 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {" "}
+      <body className={workSans.className}>
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className={`${workSans.className} flex-1`}>{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>
