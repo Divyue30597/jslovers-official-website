@@ -1,3 +1,5 @@
+import { Speaker } from "@/types";
+
 export const jobsList = [
   {
     id: 1,
@@ -106,3 +108,75 @@ export const experienceFilterOptions = [
   "5+ years",
 ];
 export const locationFilterOptions = ["abc", "xyz"];
+
+export const mock_speakers_list: Speaker[] = [
+  {
+    id: "1",
+    imageSrc: "/assets/hero_image_guest_v1.png",
+    name: "Tansiha Sabherwal",
+    designation: "Software Engineer",
+    company: "JP Morgan",
+    description:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    socials: [
+      {
+        href: "url_to_twitter_profile",
+        platform: "Twitter",
+      },
+      {
+        href: "url_to_linkedin_profile",
+        platform: "LinkedIn",
+      },
+      {
+        href: "url_to_github_profile",
+        platform: "GitHub",
+      },
+    ],
+  },
+  {
+    id: "2",
+    imageSrc: "/assets/hero_image_guest_v1.png",
+    name: "Prateek Gogia",
+    designation: "Software Engineer",
+    company: "Razorpay",
+    description:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    socials: [
+      {
+        href: "url_to_twitter_profile",
+        platform: "Twitter",
+      },
+      {
+        href: "url_to_linkedin_profile",
+        platform: "LinkedIn",
+      },
+      {
+        href: "url_to_github_profile",
+        platform: "GitHub",
+      },
+    ],
+  },
+  {
+    id: "3",
+    imageSrc: "/assets/hero_image_guest_v1.png",
+    name: "Saurabh Daware",
+    designation: "Software Engineer",
+    company: "Razorpay",
+    description:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    socials: [
+      {
+        href: "url_to_twitter_profile",
+        platform: "Twitter",
+      },
+      {
+        href: "url_to_linkedin_profile",
+        platform: "LinkedIn",
+      },
+      {
+        href: "url_to_github_profile",
+        platform: "GitHub",
+      },
+    ],
+  },
+];

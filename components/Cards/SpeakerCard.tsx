@@ -6,28 +6,29 @@ import { ImageDoubleFrame } from "@/components/ImageDoubleFrame";
 
 const SpeakerCard = ({ speaker }: { speaker: Speaker }) => {
   return (
-    <div className="lg:mx-auto">
-      <ImageDoubleFrame>
-        <Image
-          src={speaker.imageSrc}
-          width={204}
-          height={204}
-          alt=""
-          className="h-[174px] w-[174px] rounded-[10px] object-cover lg:h-[204px] lg:w-[204px]"
-          loading="lazy"
-        />
-      </ImageDoubleFrame>
+    <div
+      style={{ minWidth: "208px" }}
+      className="w-52 rounded-xl border-[6px] border-[#CCCCCC] p-4 lg:min-w-0"
+    >
+      <Image
+        src={speaker.imageSrc}
+        width={204}
+        height={204}
+        alt=""
+        className="h-[164px] w-[164px] rounded-[10px] object-cover"
+        loading="lazy"
+      />
 
-      <div className="inline-flex w-[279px] flex-col items-center gap-2 py-2 lg:items-start">
-        <div className="text-2xl font-semibold leading-[normal] text-black lg:text-[40px]">
+      <div className="flex flex-col items-center justify-between gap-2 py-2 lg:items-start">
+        <div className="text-[16px] font-semibold leading-[normal] text-black ">
           {speaker.name}
         </div>
-        <p className="text-base font-normal leading-[normal] text-black lg:text-lg">
+        <p className="text-[12px] font-normal leading-[normal] text-black">
           {`${speaker.designation}${
             speaker.company ? `, ${speaker.company}` : ""
           }`}
         </p>
-        <p className="w-[251px] text-xs font-medium leading-[normal] text-[#383a48] lg:text-sm">
+        <p className="text-[14px] font-medium leading-[normal] text-[#383a48] lg:text-sm">
           {speaker.description}
         </p>
         <div className="flex w-fit items-center justify-center gap-4">

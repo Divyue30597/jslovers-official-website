@@ -3,6 +3,7 @@ import { buttonVariants } from "@/components/Button";
 import { cn } from "@/lib/utils";
 import { SPEAKERS } from "@/config/speakers";
 import SpeakerCard from "@/components/Cards/SpeakerCard";
+import Link from "next/link";
 
 export default async function page() {
   return (
@@ -26,7 +27,8 @@ export default async function page() {
             veniam consequat sunt nostrud amet.
           </p>
 
-          <button
+          <Link
+            href={"/meetups/delhi-meetup"}
             type="submit"
             className={cn(
               buttonVariants(),
@@ -42,7 +44,7 @@ export default async function page() {
               className="ml-2 w-[14px] h-[14px] lg:ml-3 lg:w-[17px] lg:h-[17px]"
               loading="lazy"
             />
-          </button>
+          </Link>
         </div>
       </section>
 
