@@ -1,18 +1,9 @@
-"use client";
-import { useState } from "react";
-import { buttonVariants } from "@/components/Button";
 import { Icons } from "@/components/Icons";
-import { cn } from "@/lib/utils";
-import { mock_speakers_list } from "@/lib/mock_data";
-import SpeakerCard from "@/components/Cards/SpeakerCard";
+import { speaker_meetups_mock } from "@/lib/mock_data";
+import PreviousTalk from "@/components/Cards/Talk";
+import SpeakerAndVenueSection from "@/components/Meetups/DetailPageSection/SpeakerAndVenueSection";
 
 export default function page() {
-  const [isTabActive, setIsTabActive] = useState(false);
-
-  const handleClick = () => {
-    setIsTabActive(!isTabActive);
-  };
-
   return (
     <div className="container">
       <section className="mb-8">
@@ -38,65 +29,22 @@ export default function page() {
           </div>
         </div>
       </section>
-      <section className="relative mb-8">
-        <button
-          onClick={handleClick}
-          className={`${!isTabActive ? "border-b-[7px] border-b-[#AAC4FA]" : "text-[#676769]"} mr-4 p-2 text-2xl font-semibold`}
-        >
-          Details
-        </button>
-        <button
-          onClick={handleClick}
-          className={`${isTabActive ? "border-b-[7px] border-b-[#AAC4FA]" : "text-[#676769]"} p-2 text-2xl font-semibold`}
-        >
-          Speaker
-        </button>
-        <hr className="absolute top-[51px] -z-[1] w-full" />
-        {!isTabActive ? (
-          <>
-            <div className="mb-6 mt-4 whitespace-pre-wrap text-base text-[#383A48] lg:w-[70%] lg:text-[20px]">
-              {`Hello JSLovers, 
-
-[Invites are out] 
-
-Session Details: 
-
-Talk 1: Accessibility Beyond Compliance 
-Speaker: Tanisha Sabherwal, Software Engineer, JP Morgan (https://twitter.com/tanishaaa03) 
-
-Talk 2: Nested Interactive Elements Accessibility 
-Speaker: Gaurav Gupta, Lead Software Engineer, smallcase (https://twitter.com/gaurav5430) 
-
-Meetup link will be shared over Invites. 
-
-Thanks, 
-JSLovers 
-
-Team Venue - Online`}
-            </div>
-            <button
-              className={cn(
-                buttonVariants(),
-                "border-2 border-[#6295FF] bg-transparent text-base text-[#6295FF] hover:bg-[#6295FF] hover:text-white",
-              )}
-            >
-              <span className="mr-3">Tweet a thanks</span>
-              <span>{Icons.twitter()}</span>
-            </button>
-          </>
-        ) : (
-          <div className="mb-4 mt-4 flex justify-start gap-3 overflow-x-scroll lg:overflow-x-auto">
-            {mock_speakers_list.map((speaker) => {
-              return <SpeakerCard key={speaker.id} speaker={speaker} />;
-            })}
-          </div>
-        )}
+      <SpeakerAndVenueSection />
+      <section className="mb-12">
+        <h2 className="mb-8 text-center text-2xl font-medium lg:text-left lg:text-3xl">
+          More by the Speaker
+        </h2>
+        <div className="flex flex-row gap-4 overflow-x-scroll md:gap-8 lg:gap-16 lg:overflow-x-auto">
+          <PreviousTalk data={speaker_meetups_mock} />
+        </div>
       </section>
       <section className="mb-8">
-        <h2 className="text-3xl font-medium">More by the Speaker</h2>
-      </section>
-      <section className="mb-8">
-        <h2 className="text-3xl font-medium">Similar Meetups</h2>
+        <h2 className="mb-8 text-center text-2xl font-medium lg:text-left lg:text-3xl">
+          Similar Meetups
+        </h2>
+        <div className="flex flex-row gap-4 overflow-x-scroll md:gap-8 lg:gap-16 lg:overflow-x-auto">
+          <PreviousTalk data={speaker_meetups_mock} />
+        </div>
       </section>
     </div>
   );

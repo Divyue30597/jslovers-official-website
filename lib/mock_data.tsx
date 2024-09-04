@@ -1,4 +1,4 @@
-import { Speaker } from "@/types";
+import { Speaker, Talk } from "@/types";
 
 export const jobsList = [
   {
@@ -178,5 +178,32 @@ export const mock_speakers_list: Speaker[] = [
         platform: "GitHub",
       },
     ],
+  },
+];
+
+export const speaker_meetups_mock: Talk[] = [
+  {
+    title: "Introduction to ReactJs",
+    imgSrc: "/assets/hero_image_guest_v1.png",
+    date: "20 May 2021",
+    speaker: "Neha Sharma",
+  },
+  {
+    title: "Introduction to ReactJs",
+    imgSrc: "/assets/hero_image_guest_v1.png",
+    date: "20 May 2021",
+    speaker: "Neha Sharma",
+  },
+  {
+    title: "Introduction to ReactJs",
+    imgSrc: "/assets/hero_image_guest_v1.png",
+    date: "20 May 2021",
+    speaker: "Neha Sharma",
+  },
+  {
+    title: "Introduction to ReactJs",
+    imgSrc: "/assets/hero_image_guest_v1.png",
+    date: "20 May 2021",
+    speaker: "Neha Sharma",
   },
 ];
