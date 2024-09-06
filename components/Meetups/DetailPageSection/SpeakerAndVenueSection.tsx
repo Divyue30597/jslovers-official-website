@@ -9,6 +9,8 @@ import { buttonVariants } from "@/components/Button";
 import SpeakerCard from "@/components/Cards/SpeakerCard";
 import { Icons } from "@/components/Icons";
 import { SPEAKERS } from "@/config/speakers";
+import { FeatureCard } from "@/components/Cards/FeatureCard";
+import { Feature } from "@/types";
 
 export default function SpeakerAndVenueSection() {
   const [isTabActive, setIsTabActive] = useState(false);
@@ -70,7 +72,13 @@ Team Venue - Online`}
       ) : (
         <div className="mb-4 mt-4 flex justify-start gap-3 overflow-x-scroll lg:overflow-x-auto">
           {SPEAKERS.Speakers.map((speaker) => {
-            return <SpeakerCard key={speaker.id} speaker={speaker} />;
+            return (
+              <SpeakerCard
+                key={speaker.id}
+                isDoubleFrame={false}
+                speaker={speaker}
+              />
+            );
           })}
         </div>
       )}
