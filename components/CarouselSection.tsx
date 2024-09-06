@@ -56,7 +56,7 @@ const CarouselSection = ({
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <div className="w-fit py-2 text-center text-sm text-muted-foreground">
+      <div className="w-full py-4 text-center text-sm text-muted-foreground">
         {current} of {count}
       </div>
     </>

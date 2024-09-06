@@ -1,7 +1,9 @@
 import { Icons } from "@/components/Icons";
-import { speaker_meetups_mock } from "@/lib/mock_data";
 import PreviousTalk from "@/components/Cards/Talk";
 import SpeakerAndVenueSection from "@/components/Meetups/DetailPageSection/SpeakerAndVenueSection";
+import { HOMEPAGE } from "@/config/home";
+import { CarouselSection } from "@/components/CarouselSection";
+import { CarouselContent } from "@/components/ui/carousel";
 
 export default function page() {
   return (
@@ -34,17 +36,17 @@ export default function page() {
         <h2 className="mb-8 text-center text-2xl font-medium lg:text-left lg:text-3xl">
           More by the Speaker
         </h2>
-        <div className="flex flex-row gap-4 overflow-x-scroll md:gap-8 lg:gap-16 lg:overflow-x-auto">
-          <PreviousTalk data={speaker_meetups_mock} />
-        </div>
+        <CarouselSection>
+          <PreviousTalk data={HOMEPAGE.PreviousTalks} />
+        </CarouselSection>
       </section>
       <section className="mb-8">
         <h2 className="mb-8 text-center text-2xl font-medium lg:text-left lg:text-3xl">
           Similar Meetups
         </h2>
-        <div className="flex flex-row gap-4 overflow-x-scroll md:gap-8 lg:gap-16 lg:overflow-x-auto">
-          <PreviousTalk data={speaker_meetups_mock} />
-        </div>
+        <CarouselSection>
+          <PreviousTalk data={HOMEPAGE.PreviousTalks} />
+        </CarouselSection>
       </section>
     </div>
   );

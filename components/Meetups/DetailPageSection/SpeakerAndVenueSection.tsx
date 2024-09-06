@@ -8,8 +8,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/Button";
 import SpeakerCard from "@/components/Cards/SpeakerCard";
 import { Icons } from "@/components/Icons";
-
-import { mock_speakers_list } from "@/lib/mock_data";
+import { SPEAKERS } from "@/config/speakers";
 
 export default function SpeakerAndVenueSection() {
   const [isTabActive, setIsTabActive] = useState(false);
@@ -70,7 +69,7 @@ Team Venue - Online`}
         </>
       ) : (
         <div className="mb-4 mt-4 flex justify-start gap-3 overflow-x-scroll lg:overflow-x-auto">
-          {mock_speakers_list.map((speaker) => {
+          {SPEAKERS.Speakers.map((speaker) => {
             return <SpeakerCard key={speaker.id} speaker={speaker} />;
           })}
         </div>
