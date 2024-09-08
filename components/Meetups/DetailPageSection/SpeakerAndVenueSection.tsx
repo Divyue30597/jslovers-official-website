@@ -3,14 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/Button";
-import SpeakerCard from "@/components/Cards/SpeakerCard";
 import { Icons } from "@/components/Icons";
 import { SPEAKERS } from "@/config/speakers";
-import { FeatureCard } from "@/components/Cards/FeatureCard";
-import { Feature } from "@/types";
+import SpeakerCard from "@/components/Cards/SpeakerCard";
 
 export default function SpeakerAndVenueSection() {
   const [isTabActive, setIsTabActive] = useState(false);
@@ -57,14 +52,7 @@ JSLovers
 
 Team Venue - Online`}
           </div>
-          <Link
-            href={`https://twitter.com/intent/tweet?text=All%20About%20Accessibility&hashtags=JSLovers,JavaScript&url=https://jslovers.com${pathname}`}
-            className={cn(
-              buttonVariants(),
-              "twitter-share-button w-fit border-2 border-[#6295FF] bg-transparent text-base text-[#6295FF] hover:bg-[#6295FF] hover:text-white",
-            )}
-            target="_blank"
-          >
+          <Link href={`https://twitter.com/`} target="_blank">
             <span className="mr-3">Tweet a thanks</span>
             <span>{Icons.twitter()}</span>
           </Link>

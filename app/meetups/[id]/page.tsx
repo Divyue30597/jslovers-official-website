@@ -3,7 +3,6 @@ import PreviousTalk from "@/components/Cards/Talk";
 import SpeakerAndVenueSection from "@/components/Meetups/DetailPageSection/SpeakerAndVenueSection";
 import { HOMEPAGE } from "@/config/home";
 import { CarouselSection } from "@/components/CarouselSection";
-import { CarouselContent } from "@/components/ui/carousel";
 
 export default function page() {
   return (
